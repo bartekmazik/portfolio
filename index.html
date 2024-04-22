@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="Header">
+      <a href="#About"><button class="HeaderItem">Bartłomiej Mazik</button></a>
+      <a href="#Stack"><button class="HeaderItem">Stack</button></a>
+      <a href="#Projects"><button class="HeaderItem">Projects</button></a>
+      <a href="#Contact"><button class="HeaderItem">Contact</button></a>
+      <a href="./assets/cv.pdf" download
+        ><button class="HeaderItem">
+          Download Resume<img
+            src="./assets/download.svg"
+            width="24px"
+          /></button
+      ></a>
+    </header>
+
+    <div class="About" id="About">
+      <video autoplay muted loop id="myVideo">
+        <source src="./assets/2324166-uhd_3840_2160_25fps.mp4" />
+      </video>
+      <h1 id="Home">Bartłomiej Mazik</h1>
+      <h2>About</h2>
+      <span>
+        Hi, I'm Bartek, 2nd year Computer Science student located in Katowice,
+        Poland. I'm currently looking for an internship, where i can gain
+        experience to become a fullstack developer. This is my portfolio showing
+        you some of my experience and projects. Enjoy!
+      </span>
+      <a href="#Stack">
+        <img src="./assets/arrow.svg" width="32px" class="Arrow" />
+      </a>
+    </div>
+    <div id="Stack">
+      <h1>Stack</h1>
+      <div class="Stack">
+        <div class="Technologies">
+          <p>Technologies <img src="./assets/keyboard.svg" width="24px" /></p>
+          <ul>
+            <li>React</li>
+            <li>JavaScript</li>
+            <li>CSS</li>
+            <li>HTML</li>
+          </ul>
+        </div>
+        <div class="Education">
+          <p>Education <img src="./assets/education.svg" width="24px" /></p>
+          <span
+            ><h4>Uniwersytet Ekonomiczny w Katowicach</h4>
+            Computer Science 2022-</span
+          >
+        </div>
+        <div class="Languages">
+          <p>Languages <img src="./assets/chat.svg" width="24px" /></p>
+          <ul>
+            <li>Polish (Native)</li>
+            <li>English (B2+)</li>
+            <li>German (A2)</li>
+            <li>French (A2)</li>
+          </ul>
+        </div>
+      </div>
+      <a href="#Projects">
+        <img src="./assets/arrow.svg" width="32px" class="Arrow" />
+      </a>
+    </div>
+    <div class="Projects" id="Projects">
+      <h1>Projects</h1>
+      <div class="Project">
+        <img src="./assets/forum.png" width="100px" class="ProjectImg" />
+        <div>
+          <h3>ForumApp</h3>
+          <span
+            >A forum-style website, developed in React.js, facilitating post and
+            comment display and filter interaction. Its implementation leverages
+            the Jsonplaceholder API, and Bootstrap framework.</span
+          >
+          <button>
+            <a href="https://github.com/bartekmazik/ForumApp"
+              >Check this out <img src="./assets/github.svg" width="24px"
+            /></a>
+          </button>
+        </div>
+      </div>
+      <div class="Project" id="Project2">
+        <img src="./assets/floor.png" width="100px" class="ProjectImg" />
+        <div>
+          <h3>FloorApp</h3>
+          <span
+            >Web application developed in React.js. Designed to effortlessly
+            visualise the arrangement of floor panels within any given
+            room.</span
+          >
+          <button>
+            <a href="https://github.com/bartekmazik/FloorApp"
+              >Check this out <img src="./assets/github.svg" width="24px"
+            /></a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="Contact">
+      <h1 id="ContactHeader">Contact</h1>
+      <div class="Contact">
+        <div class="Socials">
+          <h1 id="Linki">Find me on</h1>
+          <div class="SocialItems">
+            <a href="https://www.github.com/bartekmazik"
+              ><img src="./assets/github.svg" width="64px"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/bart%C5%82omiej-mazik-a4075226b/"
+              ><img src="./assets/linkedin.svg" width="64px"
+            /></a>
+          </div>
+        </div>
+
+        <div class="Form">
+          <h1 id="Linki">Let's talk</h1>
+          <div><strong>Email: </strong>bartlomiejmazik1@gmail.com</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Bartłomiej Mazik 2024</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        for (const link of links) {
+          link.addEventListener("click", smoothScroll);
+        }
+
+        function smoothScroll(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+          const targetPosition =
+            targetElement.offsetTop - window.innerHeight * 0.05; // Adjusted by 95vh
+          const startPosition = window.pageYOffset;
+          const distance = targetPosition - startPosition;
+          const duration = 1000; // adjust this value to control the scroll speed
+          let start = null;
+
+          function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            window.scrollTo(
+              0,
+              easeInOut(startPosition, distance, progress, duration)
+            );
+            if (progress < duration) {
+              window.requestAnimationFrame(step);
+            }
+          }
+
+          window.requestAnimationFrame(step);
+        }
+
+        function easeInOut(start, distance, progress, duration) {
+          progress /= duration / 2;
+          if (progress < 1) return (distance / 2) * progress * progress + start;
+          progress--;
+          return (-distance / 2) * (progress * (progress - 2) - 1) + start;
+        }
+      });
+    </script>
+  </body>
+</html>

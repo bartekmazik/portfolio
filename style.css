@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", monospace;
+  font-optical-sizing: auto;
+  color: white;
+  background-color: #161616;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  /* scroll-behavior: smooth;*/
+}
+#myVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+}
+button {
+  border: none;
+  background: rgba(219, 15, 15, 0);
+  color: white;
+  font-family: "Poppins", monospace;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: 0.3s;
+}
+button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #a89bff;
+}
+
+button img:hover {
+  fill: #ffffff;
+}
+header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  height: 5vh;
+  width: 100%;
+  justify-content: space-around;
+  background-color: black;
+  padding: 1rem;
+}
+header a {
+  text-decoration: none;
+}
+header button {
+  border-radius: 2px;
+}
+.HeaderItem {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 1rem;
+  height: 5vh;
+  width: 100vw;
+}
+.About {
+  height: 90vh;
+  padding-top: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.About span {
+  width: 40vw;
+  margin-bottom: 2rem;
+}
+.Arrow {
+  cursor: pointer;
+}
+#Stack {
+  margin-top: 20vh;
+  padding-top: 3vh;
+}
+#Stack h1 {
+  margin: 3rem;
+}
+.Stack {
+  height: 85vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  padding-bottom: 5vh;
+}
+.Stack a {
+  grid-row: 2;
+  grid-column: 3;
+}
+.Stack > div {
+  background-color: black;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid white;
+}
+
+.Stack > div:hover {
+  transform: scale(1.05);
+}
+
+.Technologies {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.Education {
+  grid-row: 2;
+  grid-column: 2;
+}
+.Education span {
+  padding-bottom: 5vh;
+}
+
+.Languages {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.Projects {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+}
+
+.Project {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100vw;
+}
+.Project div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-inline: 10rem;
+}
+.Project a {
+  text-decoration: none;
+  color: white;
+}
+.ProjectImg {
+  height: 50vh;
+  width: 45vw;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+#Project2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#Contact {
+  height: 80vh;
+  padding-top: 10vh;
+}
+.Contact {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  margin-bottom: 5rem;
+}
+
+.Socials {
+  grid-column: 1;
+  align-self: start;
+}
+.SocialItems {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+}
+.Form {
+  grid-column: 2;
+  align-self: start;
+}
+.Form form {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-inline: 4rem;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  background-color: black;
+}
+.Form input {
+  border-radius: 5px;
+  border: 3px solid black;
+}
+.Message {
+  padding-bottom: 15vh;
+  width: 20vw;
+}
+span {
+  font-size: 16px;
+  font-style: italic;
+}
+@media (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    padding-right: 3rem;
+  }
+  header {
+    padding-left: 3rem;
+  }
+  .HeaderItem img {
+    opacity: 0;
+  }
+  #myVideo {
+    opacity: 0;
+  }
+  .About {
+    padding-top: 1rem;
+    height: 50vh;
+  }
+  .About span {
+    width: 60vw;
+    margin-inline: 0;
+    padding-inline: 0;
+    margin-bottom: 2rem;
+  }
+  .Stack {
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5vh;
+    margin-inline: auto;
+    justify-content: center;
+  }
+  .Stack div {
+    width: 80vw;
+  }
+  #Stack h1 {
+    margin-bottom: 3rem;
+    margin-top: -4rem;
+  }
+  .Projects {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .Project {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vw;
+    padding: 0;
+  }
+  .ProjectImg {
+    height: 20vh;
+    width: 80vw;
+  }
+  .Project div {
+    width: 55vw;
+    padding: 0;
+  }
+  #ContactHeader {
+    opacity: 0;
+  }
+  #Contact {
+    padding: 0;
+  }
+  .Contact {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  .Contact > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  footer {
+    margin-top: 3rem;
+  }
+}
